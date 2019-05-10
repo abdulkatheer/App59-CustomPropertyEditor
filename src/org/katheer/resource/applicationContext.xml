@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="student" class="org.katheer.bean.Student">
+        <property name="name" value="Abdul Katheer"/>
+        <property name="id" value="101"/>
+        <property name="marks">
+            <array>
+                <value>90</value>
+                <value>87</value>
+                <value>91</value>
+                <value>84</value>
+                <value>98</value>
+            </array>
+        </property>
+        <property name="address"
+                  value="4/167A-Muslim Street, Paraipatty-Periyakottai PO-Dindigul-Tamilnadu-624306"/>
+    </bean>
+
+    <bean id="customEditorConfigurer"
+            class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <entry key="org.katheer.bean.Address"
+                       value="org.katheer.bean.property.editor.AddressPropertyEditor"/>
+            </map>
+        </property>
+    </bean>
+</beans>
